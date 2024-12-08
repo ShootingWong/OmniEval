@@ -40,8 +40,9 @@ With FlashRAG and provided resources, you can effortlessly reproduce existing SO
 <!-- ## :sparkles: Features
 1. -->
 ## :rocket: Quick-Start
-Note that the code run path is `./OpenFinBench`
-We provide our auto-generated evaluation dataset in <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
+Notion:
+1. The code run path is `./OpenFinBench`
+2. We provide our auto-generated evaluation dataset in <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
 ### 1. Build the Retrieval Corpus
 ```
 # cd OpenFinBench
