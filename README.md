@@ -21,7 +21,7 @@
 <p>
 <a href="#wrench-installation">Installation</a> |
 <!-- <a href="#sparkles-features">Features</a> | -->
-<a href="#rocket-quick-start">Quick-Start</a> |
+<a href="#rocket-quick-start">Quick-Start</a>
 </p>
 
 </h4>
