@@ -37,7 +37,7 @@ With FlashRAG and provided resources, you can effortlessly reproduce existing SO
 <!-- ## :sparkles: Features
 1. -->
 ## :rocket: Quick-Start
-Notion:
+Notes:
 1. The code run path is `./OpenFinBench`
 2. We provide the following datasets:
     1. Auto-generated evaluation dataset in <a href="https://huggingface.co/datasets/RUC-NLPIR/OmniEval-AutoGen-Dataset" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
