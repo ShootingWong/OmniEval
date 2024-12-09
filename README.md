@@ -140,8 +140,8 @@ Then conduct the model-based evaluate using the following codes, (change the par
 # judge_type="model" # model or rule
 # hallu_eval=0 # hallucination evaluator is different to other evaluator. 1 = use do hallucination evaluation, 0 = do other model-based metric evaluation. This parameter is only valid when judge_type="model"
 
-# MODEL_EVAL_API=http://localhost:8000 # the endpoint address of your vllm server of model-evaluator
-# HALLU_EVAL_API=http://localhost:8000 # the endpoint address of your vllm server of hallucination-evaluator
+# MODEL_EVAL_API=http://localhost:8000 # the access address of your vllm server of model-evaluator
+# HALLU_EVAL_API=http://localhost:8000 # the access address of your vllm server of hallucination-evaluator
 
 sh evaluator/judgement/judger.sh 
 ``` 
