@@ -2,20 +2,14 @@
 
 
 <div align="center">
-<!-- <a href="https://arxiv.org/abs/2405.13576" target="_blank"><img src=https://img.shields.io/badge/arXiv-b5212f.svg?logo=arxiv></a> -->
-<!-- <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20Datasets-27b3b4.svg></a> -->
-<!-- <a href="https://huggingface.co/RUC-NLPIR/OmniEval-ModelEvaluator" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20Checkpoint-5fc372.svg></a> -->
-<!-- <a href="https://huggingface.co/RUC-NLPIR/OmniEval-HallucinationEvaluator" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace%20Checkpoint-b181d9.svg></a> -->
-<a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
-<a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-b181d9></a>
+<a href="https://huggingface.co/datasets/RUC-NLPIR/OmniEval-AutoGen-Dataset" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
+<a href="https://huggingface.co/datasets/RUC-NLPIR/OmniEval-KnowledgeCorpus" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-b181d9></a>
 <a href="https://huggingface.co/RUC-NLPIR/OmniEval-ModelEvaluator" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoint-5fc372></a>
 <a href="https://huggingface.co/RUC-NLPIR/OmniEval-HallucinationEvaluator" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Checkpoint-b181d9></a>
 <a href="https://huggingface.co/spaces/NLPIR-RAG/OmniEval" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue></a>
 <a href="https://github.com/RUC-NLPIR/FlashRAG/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/LICENSE-MIT-green"></a>
 <a><img alt="Static Badge" src="https://img.shields.io/badge/made_with-Python-blue"></a>
 </div>
-
-<!-- [![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-blue)](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard) -->
 
 <h4 align="center">
 
@@ -46,8 +40,8 @@ With FlashRAG and provided resources, you can effortlessly reproduce existing SO
 Notion:
 1. The code run path is `./OpenFinBench`
 2. We provide the following datasets:
-    1. Auto-generated evaluation dataset in <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
-    2. Constructed knowledge corpus in <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-b181d9></a>
+    1. Auto-generated evaluation dataset in <a href="https://huggingface.co/datasets/RUC-NLPIR/OmniEval-AutoGen-Dataset" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-27b3b4></a>
+    2. Constructed knowledge corpus in <a href="https://huggingface.co/datasets/RUC-NLPIR/OmniEval-KnowledgeCorpus" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-b181d9></a>
 ### 1. Build the Retrieval Corpus
 1. If you use our provided knowledge corpus, do the following steps:
     1. download knowledge corpus from <a href="https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets/" target="_blank"><img src=https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-b181d9></a>
@@ -138,7 +132,7 @@ Then conduct the model-based evaluate using the following codes, (change the par
 # CHUNK_SIZE=2048
 # CHUNK_OVERLAP=256
 # NODE_NAME="${SAVE_NAME}-${CHUNK_SIZE}-${CHUNK_OVERLAP}" # the save name of your built knowledge corpus (same as the one in build_corpus.sh)
-# EVAL_GENDATA_NAME="gen_datas_${your_fix}" # folder name of generated evaluation dataset (that is same as the folder name of its inference results)
+# EVAL_GENDATA_NAME="gen_datas_${your_suffix}" # folder name of generated evaluation dataset (that is same as the folder name of its inference results)
 
 # retriever="bge-large-zh,gte-qwen2-1.5b" # set your target evaluation retriever model names, split by ','. The corresponding name2path map should be set in configs/model2path.json
 # generator_model="deepseek-v2-chat,yi15-34b" # set your target evaluation generation model names, split by ','. The corresponding name2path map should be set in configs/model2path.json
@@ -159,6 +153,17 @@ sh evaluator/judgement/judger.sh
 sh evaluator/judgement/judger.sh
 ```
 Note that when evaluating close-book LLMs, you should set "--close_book" in "evaluator/judgement/judger.sh".
+
+3. Merge Evaluation results
+After doing rule-based, model-based (hallucination and others) evaluation, there will be three files inner the save dir of each evaluated model (`evaluator/pred_results/gen_data_${your_suffix}/${retriever}_TOP${k}-${generator}`), i.e.:
+    1. evaluation_result_rule.jsonl
+    2. evaluation_result_model_qwen-eval-hallucination.jsonl
+    3. evaluation_result_model_qwen-eval.jsonl
+Merge the latter two to obtain the final results of model-based evaluation by the following commands:
+```
+python evaluator/judgement/merge_pred_results.py # In the code, set root = "evaluator/pred_results/gen_datas_${your_suffix}"
+```
+
 ## :bookmark: License
 
 OmniEval is licensed under the [<u>MIT License</u>](./LICENSE).
