@@ -160,9 +160,9 @@ After doing rule-based, model-based (hallucination and others) evaluation, there
     2. evaluation_result_model_qwen-eval-hallucination.jsonl
     3. evaluation_result_model_qwen-eval.jsonl
 Merge the latter two to obtain the final results of model-based evaluation by the following commands:
-```
-python evaluator/judgement/merge_pred_results.py # In the code, set root = "evaluator/pred_results/gen_datas_${your_suffix}"
-```
+    ```
+    python evaluator/judgement/merge_pred_results.py # In the code, set root = "evaluator/pred_results/gen_datas_${your_suffix}"
+    ```
 
 ## :bookmark: License
 
