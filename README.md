@@ -166,6 +166,7 @@ Merge the latter two to obtain the final results of model-based evaluation by th
     ```
     python evaluator/judgement/merge_pred_results.py # In the code, set root = "evaluator/pred_results/gen_datas_${your_suffix}"
     ```
+    This command will generate the fourth evaluation file, named "evaluation_result_model_qwen-eval-merge.jsonl", which contains the final model-based evaluation result. 
 
 ## :bookmark: License
 
