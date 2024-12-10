@@ -85,7 +85,7 @@ Notes:
     # NODE_NAME="${SAVE_NAME}-${CHUNK_SIZE}-${CHUNK_OVERLAP}" # the save name of your built knowledge corpus (same as the one in build_corpus.sh)
     # API_KEY="" # your own api key
     # DATA_SUFFIX="test"
-    # GEN_TYPE="filter" # when you need to do data quality inspection, sest this parameter as "filter"
+    # GEN_TYPE="filter" # when you need to do data quality inspection, set this parameter as "filter"
 
     sh data_generator/generate_data_filter.sh
     ```
