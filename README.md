@@ -89,7 +89,7 @@ Notes:
 
     sh data_generator/generate_data_filter.sh
     ```
-    Note that after data quality inspection, there will be three more folders containing filtered or cleaned, generated data, namely "gen_datas_${DATA_SUFFIX}_clean", "gen_datas\_${DATA_SUFFIX}\_filter", and "gen_datas\_${DATA_SUFFIX}\_final". Only the "gen_datas\_${DATA_SUFFIX}\_final" servers as the final generated evaluation data samples. The previous two are the intermediate productions. If your code is corrupted without finishing running, these two folders can also useful to avoid generating again. 
+    Note that after data quality inspection, there will be three more folders containing filtered or cleaned generated data, namely "gen_datas_${DATA_SUFFIX}_clean", "gen_datas\_${DATA_SUFFIX}\_filter", and "gen_datas\_${DATA_SUFFIX}\_final". Only the "gen_datas\_${DATA_SUFFIX}\_final" servers as the final generated evaluation data samples. The previous two are the intermediate productions. If your code is corrupted without finishing running, these two folders can also useful to avoid generating again. 
 ### 3. Inference Your Models
 ```
 # cd OpenFinBench
