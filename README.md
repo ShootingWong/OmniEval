@@ -138,7 +138,7 @@ Then conduct the model-based evaluate using the following codes, (change the par
 # generator_model="deepseek-v2-chat,yi15-34b" # set your target evaluation generation model names, split by ','. The corresponding name2path map should be set in configs/model2path.json
 # retrieval_topk=5
 # judge_type="model" # model or rule
-# hallu_eval=0 # hallucination evaluator is different to other evaluator. 1 = use do hallucination evaluation, 0 = do other model-based metric evaluation. This parameter is only valid when judge_type="model"
+# hallu_eval=0 # hallucination evaluator is different to other evaluator. 1 = do hallucination evaluation, 0 = do other model-based metric evaluation. This parameter is only valid when judge_type="model"
 
 # MODEL_EVAL_API=http://localhost:8000 # the access address of your vllm server of model-evaluator
 # HALLU_EVAL_API=http://localhost:8000 # the access address of your vllm server of hallucination-evaluator
