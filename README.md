@@ -32,7 +32,10 @@ With FlashRAG and provided resources, you can effortlessly reproduce existing SO
 
 
 ## :wrench: Installation
-`conda env create -f environment.yml && conda activate finrag`
+```
+conda env create -f environment.yml
+conda activate finrag
+```
 
 <!-- ## :sparkles: Features
 1. -->
